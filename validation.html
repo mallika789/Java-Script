@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <title>Registration Form</title>
+<script> 
+function ValidateForm()                                   
+{ 
+    var name = document.forms["form"]["Name"];               
+    var email = document.forms["form"]["Email"]; 
+    var password =  document.forms["form"]["Password"]; 
+    var num = document.forms["form"]["PhoneNo"];  
+      
+   
+    if (name.value=="" || name.value==null || name.value<6)                                  
+    { 
+        window.alert("Please enter your name with more than 6 characters."); 
+        name.focus(); 
+        return false; 
+    }
+       
+    var dotposition=email.value.lastIndexOf("."); 
+    var atposition=email.value.indexOf("@");  
+
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){ 
+    	window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+    if (password.value=="" || password.value==null || password.value<6)                        
+    { 
+        window.alert("Please enter a strong password"); 
+        password.focus(); 
+        return false; 
+    } 
+   
+    if (num.value=="" || num.value==null)                           
+    { 
+        window.alert("Please enter proper Telephone number."); 
+        num.focus(); 
+        return false; 
+    } 
+    return true; 
+}
+</script> 
+</head> 
+<body>
+<center>
+<h1 style="text-align: center"> REGISTRATION FORM </h1>           
+<form name="form" action="#" onsubmit="return ValidateForm()" method="post" style="background-image: form.jpg">  
+      
+    <p>Name: <input type="text" name="Name"></p>       
+    <p>E-mail Address: <input type="text" name="Email"></p> 
+    <p>Password: <input type="text" name="Password"></p> 
+    <p>Telephone: <input type="text" name="PhoneNo"></p>   
+    <p> Address: <textarea rows="8" cols="20"></textarea></p>       
+    <p>Gender : <input type="radio" name="gender" value="female"/>Female
+                <input type="radio" name="gender" value="male"/>Male
+                <input type="radio" name="gender" value="other"/>Other</p>
+    <p>Courses to Choose : <input type="checkbox" name="l1" value="l1"/>Java
+                  <input type="checkbox" name="l2" value="l2"/>Html
+                  <input type="checkbox" name="l3" value="l3"/>Python
+                  <input type="checkbox" name="l4" value="l4"/>C</p>
+    <p><input type="submit" value="send" name="Submit"></p>    
+    <p><input type="reset" value="Reset" name="Reset"></p>
+</form>
+</center> 
+</body> 
+</html>
